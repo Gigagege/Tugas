@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Perusahaan GigaGege</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f4f8;
+      text-align: center;
+      padding: 50px;
+    }
+
+    h1 {
+      color: #2c3e50;
+    }
+
+    .form-container, .jobs-container {
+      background-color: white;
+      padding: 30px;
+      margin: 0 auto;
+      max-width: 400px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    input[type="text"], input[type="password"] {
+      width: 80%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #3498db;
+      border: none;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .job-option {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #34495e;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Perusahaan GigaGege</h1>
+
+  <div class="form-container" id="formDiv">
+    <h2>Formulir Pendaftaran</h2>
+    <input type="text" id="username" placeholder="Username"><br>
+    <input type="password" id="password" placeholder="Password"><br>
+    <button onclick="daftar()">Daftar</button>
+  </div>
+
+  <div class="jobs-container hidden" id="jobsDiv">
+    <h2>Pilih Pekerjaan Anda:</h2>
+    <div class="job-option">1. Programmer</div>
+    <div class="job-option">2. Desainer Grafis</div>
+    <div class="job-option">3. Marketing Digital</div>
+  </div>
+
+  <script>
+    function daftar() {
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      if(username && password){
+        document.getElementById("formDiv").classList.add("hidden");
+        document.getElementById("jobsDiv").classList.remove("hidden");
+      } else {
+        alert("Silakan isi Username dan Password terlebih dahulu.");
+      }
+    }
+  </script>
+
+</body>
+</html>
